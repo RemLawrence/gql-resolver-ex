@@ -1,0 +1,14 @@
+{
+  "userId": 2,
+  "friendId": 3,
+
+  "createUserInput": {
+    "name": "Mori Calliope",
+    "username": "mcalliope"
+  },
+
+  "updateUsernameInput": {
+    "id": 2,
+    "newUsername": "A"
+  }
+}

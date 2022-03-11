@@ -1,0 +1,62 @@
+query GetAllUsers {
+  users {
+    id
+    name
+    username
+    age
+    nationality
+    friends {
+      name
+      age
+    }
+  }
+}
+
+query GetUserById($userId: ID!) {
+  user(id: $userId) {
+    name
+    age
+    nationality
+    friends {
+      name
+    }
+    favoriteMovies {
+      name
+    }
+  }
+}
+
+mutation CreateUser($createUserInput: CreateUserInput!) {
+  createUser(user: $createUserInput) {
+    name
+    id
+  }
+}
+)
+
+mutation AddFriend($userId: ID!, $friendId: ID!) {
+  addFriend(userId: $userId, friendId: $friendId) {
+    name
+    id
+    friends {
+      name
+      id
+    }
+  }
+}
+)
+
+mutation UpdateUsername($updateUsernameInput: UpdateUsernameInput!) {
+  updateUsername(input: $updateUsernameInput) {
+    name
+    id
+    username
+  }
+}
+)
+
+mutation($deleteUserId: ID!) {
+  deleteUser(userId: $deleteUserId) {
+    id
+  }
+}
